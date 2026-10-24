@@ -23,4 +23,10 @@ public class CalculatorTest {
         assertEquals(5, calculator.sum(5, 0));
     }
 
+    @Test
+    public void testSubtract() {
+        assertEquals(-1, calculator.subtract(1, 2));
+        assertEquals(5, calculator.subtract(10, 5));
+    }
+
 }
