@@ -5,6 +5,7 @@
 import org.junit.jupiter.api.Test; //FOR ANNOTATIONS
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
@@ -34,6 +35,17 @@ public class CalculatorTest {
         assertEquals(2, calculator.multiply(1, 2));
         assertEquals(0, calculator.multiply(5, 0));
         assertEquals(-10, calculator.multiply(2, -5));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(2, calculator.divide(2, 1));
+        assertEquals(3, calculator.divide(9, 3));
+    }
+
+    @Test
+    public void testDivideByZero() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, 0));
     }
 
 }
