@@ -4,8 +4,10 @@
 
 import org.junit.jupiter.api.Test; //FOR ANNOTATIONS
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CalculatorTest {
 
@@ -15,7 +17,9 @@ public class CalculatorTest {
     // public void methods
 
 
-    // This follows: Build, Operate, Check process
+    /**
+     * assertEquals with a positive, negative, or zero value
+     */
     @Test
     public void testSum() {
         // Positive, negative, and zero values
@@ -23,13 +27,18 @@ public class CalculatorTest {
         assertEquals(-3, calculator.sum(-1, -2));
         assertEquals(5, calculator.sum(5, 0));
     }
-
+    /**
+     * assertEquals with two meaningful cases, negative and positive case.
+     */
     @Test
     public void testSubtract() {
         assertEquals(-1, calculator.subtract(1, 2));
         assertEquals(5, calculator.subtract(10, 5));
     }
 
+    /**
+     * assertEquals including a positive, zero, and negative case
+     */
     @Test
     public void testMultiply() {
         assertEquals(2, calculator.multiply(1, 2));
@@ -37,18 +46,26 @@ public class CalculatorTest {
         assertEquals(-10, calculator.multiply(2, -5));
     }
 
+    /**
+     * assertEquals positive divide state
+     */
     @Test
     public void testDivide() {
         assertEquals(2, calculator.divide(2, 1));
         assertEquals(3, calculator.divide(9, 3));
     }
-
+    /**
+     * assertThrows for the divide-by-zero exception test
+     */
     @Test
     public void testDivideByZero() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, 0));
     }
 
     // We have tested ints, let's test other data types: boolean (true or false)
+    /**
+     * assertTrue
+     */
     @Test
     public void testIsEven() {
         boolean actual = calculator.isEven(2);
@@ -56,6 +73,9 @@ public class CalculatorTest {
     }
 
     // We can do the same with assertFalse for odd numbers
+    /**
+     * assertFalse
+     */
     @Test
     public void testIsOdd() {
         boolean actual = calculator.isEven(3);
