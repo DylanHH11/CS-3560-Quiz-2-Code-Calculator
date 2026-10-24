@@ -16,11 +16,11 @@ public class CalculatorTest {
 
     // This follows: Build, Operate, Check process
     @Test
-    public void testSum()
-    {
-        int expected = 3;
-        int actual = calculator.sum(1,2); //1+2 = 3
-        assertEquals(expected, actual);
+    public void testSum() {
+        // Positive, negative, and zero values
+        assertEquals(3, calculator.sum(1, 2));
+        assertEquals(-3, calculator.sum(-1, -2));
+        assertEquals(5, calculator.sum(5, 0));
     }
 
 }
