@@ -13,7 +13,11 @@ public class Calculator {
     }
     public int divide(int x, int y)
     {
-        return 0;
+        if(y==0)
+        {
+            throw new IllegalArgumentException();
+        }
+        return x/y;
     }
 
     public int isEven(int value)
