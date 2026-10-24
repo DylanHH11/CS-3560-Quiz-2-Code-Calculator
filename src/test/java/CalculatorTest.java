@@ -4,8 +4,8 @@
 
 import org.junit.jupiter.api.Test; //FOR ANNOTATIONS
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class CalculatorTest {
 
@@ -46,6 +46,20 @@ public class CalculatorTest {
     @Test
     public void testDivideByZero() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, 0));
+    }
+
+    // We have tested ints, let's test other data types: boolean (true or false)
+    @Test
+    public void testIsEven() {
+        boolean actual = calculator.isEven(2);
+        assertTrue(actual); // Expect true for even numbers
+    }
+
+    // We can do the same with assertFalse for odd numbers
+    @Test
+    public void testIsOdd() {
+        boolean actual = calculator.isEven(2);
+        assertFalse(actual); // Expect false for odd numbers
     }
 
 }
