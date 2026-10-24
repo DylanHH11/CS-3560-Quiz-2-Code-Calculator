@@ -58,7 +58,7 @@ public class CalculatorTest {
     // We can do the same with assertFalse for odd numbers
     @Test
     public void testIsOdd() {
-        boolean actual = calculator.isEven(2);
+        boolean actual = calculator.isEven(3);
         assertFalse(actual); // Expect false for odd numbers
     }
 

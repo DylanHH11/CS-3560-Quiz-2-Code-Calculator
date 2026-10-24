@@ -20,8 +20,7 @@ public class Calculator {
         return x/y;
     }
 
-    public boolean isEven(int value)
-    {
-        return false;
+    public boolean isEven(int value) {
+        return value%2==0; // Passes both testIsEven and testIsOdd (Green)
     }
 }
